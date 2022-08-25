@@ -6,47 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- css style link -->
     <link rel="stylesheet" href="css/styles.css">
+    <!-- font awesome link -->
+    <script src="https://kit.fontawesome.com/fff6787438.js" crossorigin="anonymous"></script>
+    <!-- favicon link -->
     <link rel="icon" href="favicon.ico?v=2">
     <!-- js script -->
-    <script defer src="js/calculator.js"></script>
+    <script src="js/calculator.js" defer></script>
     <title>Calculator</title>
 </head>
 <body>
+    <h1>Calculator</h1>
     <div class="container">
-        <h1>Calculator</h1>
-    </div>
-    <div class="row">
-        <div class="screen">
+        <div class="first-row">
+                <div class="screen">
+                    <div class="previous">0</div>
+                    <div class="current">0</div>
+                </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="button" data-value="8">8</div>
-        <div class="button" data-value="7">7</div>
-        <div class="button" data-value="9">9</div>
-        <div class="button" data-value="/">/</div>
-    </div>
-    <div class="row">
-        <div class="button" data-value="4">4</div>
-        <div class="button" data-value="5">5</div>
-        <div class="button" data-value="6">6</div>
-        <div class="button" data-value="*">*</div>
-    </div>
-    <div class="row">
-        <div class="button" data-value="1">1</div>
-        <div class="button" data-value="2">2</div>
-        <div class="button" data-value="3">3</div>
-        <div class="button" data-value="-">-</div>
-    </div>
-    <div class="row">
-        <div class="button" data-value="=">=</div>
-        <div class="button" data-value=".">.</div>
-        <div class="button" data-value="0">0</div>
-        <div class="button" data-value="+">+</div>
-    </div>
-    <div class="row">
-        <div class="button" id="btn-btn" data-value="clear">Clear</div>
-        <div class="button" id="btn-btn" data-value="backspace">Backspace</div>
-        <div class="button" id="btn-btn" data-value="power">x<sup>2</sup></div>
+        <div class="second-row">
+            <button class="number" >8</button>
+            <button class="number" >7</button>
+            <button class="number" >9</button>
+            <button class="operator">/</button>
+        </div>
+        <div class="second-row">
+            <button class="number" >4</button>
+            <button class="number" >5</button>
+            <button class="number" >6</button>
+            <button class="operator" >*</button>
+        </div>
+        <div class="second-row">
+            <button class="number" >1</button>
+            <button class="number" >2</button>
+            <button class="number" >3</button>
+            <button class="operator" >-</button>
+        </div>
+        <div class="second-row">
+            <button class="equals" >=</button>
+            <button class="decimal" >.</button>
+            <button class="number" >0</button>
+            <button class="operator" >+</button>
+        </div>
+        <div class="second-row">
+            <button class="clear">Clear</button>
+            <button class="backspace">Backspace</button>
+            <button class="operator" id="operator"><i class="fa-solid fa-superscript"></i></button>
+        </div>
     </div>
 </body>
 </html>
