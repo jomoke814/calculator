@@ -35,9 +35,20 @@ document.addEventListener('DOMContentLoaded', function(){
     })
 
     equals.addEventListener("click", function() {
-        calculate();
+        if(currentValue != '' && previousValue != ''){
+            calculate()
+            prevScreen.textContent = '';
+            if(previousValue.length <=6){
+                curScreen.textContent = previousValue;
+            } else{
+            curScreen.textContent = previousValue.slice(0,6) + "..."
+            }
+        }
     })
 
+    decimal.addEventListener("click", function(){
+        addDecimal();
+    })
 })
 
 function handleNumber(num){
@@ -53,6 +64,34 @@ function handleOperator(op){
 }
 
 function calculate() {
+    previousValue = Number(previousValue)
+    currentValue = Number(currentValue)
 
+    if(operator === "+"){
+        previousValue += currentValue
+    } else if(operator === "-") {
+        previousValue -= currentValue
+    } else if(operator === "x"){
+        previousValue *= currentValue
+    }else {(operator === "/")
+    if(currentValue === 0){
+        previousValue = "Error";
+        return;
+    }
+    previousValue /= currentValue  
+    }
+
+    previousValue = roundNumber(previousValue);
+    previousValue = previousValue.toString();
+    currentValue = previousValue.toString();
 }
 
+function roundNumber(num){
+    return Math.round(num * 1000) /1000;
+}
+
+function addDecimal(){
+    if(!currentValue.includes(".")){
+        currentValue += '.';
+    }
+}
